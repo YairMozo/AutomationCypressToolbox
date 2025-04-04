@@ -5,10 +5,15 @@ import SignupPage from '../support/pages/SignupPage';
 import { generateUserData } from '../support/utils/testData';
 
 describe('Registration', () => {
+  // Generate user data once for all tests in this describe block
+  let userData;
+
+  beforeEach(() => {
+    // Generate new user data before each test
+    userData = generateUserData();
+  });
+
   it('should successfully register a new user', () => {
-    // Generate random user data for this test
-    const userData = generateUserData();
-    
     // Step 1: Navigate to the website and click on register
     HomePage.visit().clickRegister();
 
@@ -20,7 +25,7 @@ describe('Registration', () => {
     // Step 3: Fill out the complete registration form
     RegistrationFormPage.selectGender('male')
                         .enterPassword(userData.password)
-                        .selectDateOfBirth('15','11' , '2003')
+                        .selectDateOfBirth('15', '11', '2003')
                         .checkNewsletterAndOffers()
                         .enterFirstName(userData.firstName)
                         .enterLastName(userData.lastName)

@@ -16,3 +16,15 @@
 // Import commands.js using ES2015 syntax:
 import './commands';
 
+// Import page objects
+import DashboardPage from './pages/DashboardPage';
+import HomePage from './pages/HomePage';
+import RegistrationFormPage from './pages/RegistrationFormPage';
+import SignupPage from './pages/SignupPage';
+
+// Make page objects available globally
+Cypress.HomePage = HomePage;
+Cypress.SignupPage = SignupPage;
+Cypress.RegistrationFormPage = RegistrationFormPage;
+Cypress.DashboardPage = DashboardPage;
+
