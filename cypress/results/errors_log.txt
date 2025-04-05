@@ -1,0 +1,11 @@
+[2025-04-05T16:06:36Z] POST /v1/test?text=testing
+Falta propiedad 'message' en el response que confirme éxito de operación.
+Body vacío, aunque se envió un parámetro relevante (text).
+Evaluar si el POST es correcto para esta operacion ya que parece que es mas para una peticion GET que recibe datos de lectura
+No existe un content-type
+
+[2025-04-05T16:02:15Z] DELETE /v1/test
+No se incluye confirmación de eliminación del recurso (ej. "message": "Deleted successfully").
+El servicio no recibe un recurso para eliminar en el servicio
+No existe un content-type
+

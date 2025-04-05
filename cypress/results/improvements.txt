@@ -1,0 +1,26 @@
+Mejoras para los servicios HTTP evaluados:
+
+===============================
+1. Servicio POST
+
+Mejoras sugeridas:
+- Usar HTTPS en lugar de HTTP para mayor seguridad.
+- Si se va a enviar un valor como `text`, incluirlo en el body en formato JSON.
+- Añadir el encabezado `Content-Type: application/json`.
+- Evitar enviar body vacío con `--data ''` si no es necesario.
+- Si la operación es de solo lectura (por ejemplo, "echo" o prueba), considerar usar `GET` en lugar de `POST`.
+- Agregar autenticación si el endpoint lo requiere (por ejemplo, header `Authorization`).
+
+
+===============================
+
+2. Servicio DELETE
+
+
+Mejoras sugeridas:
+- Usar HTTPS en lugar de HTTP.
+- Especificar el recurso que se desea eliminar mediante un identificador (por ejemplo, `/v1/test/123`).
+- Incluir autenticación (header `Authorization`) si aplica.
+- Documentar si acepta o no parámetros en el body o query string.
+- Evitar endpoints genéricos como `/test` para operaciones sensibles.
+
