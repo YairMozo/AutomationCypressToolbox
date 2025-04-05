@@ -41,5 +41,13 @@ describe('Registration', () => {
     // Step 4: Assertions to verify successful registration
     DashboardPage.verifyAccountCreated()
                 .clickContinue();
+    
+    HomePage.clickDeleteAccount();
+
+    DashboardPage.verifyAccountDelete()
+                .clickContinueDelete();
+    // Step 5: Assertions to verify successful account deletion
+     
+
   });
 });

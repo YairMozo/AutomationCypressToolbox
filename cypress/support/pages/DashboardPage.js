@@ -1,16 +1,31 @@
-
 class DashboardPage {
-  verifyAccountCreated() {
-    // Check if the account created message is displayed
-    cy.get('b').should('have.text', 'Account Created!');
+  selectors = {
+    message: 'b',
+    continueButton: '[data-qa="continue-button"]'
+  };
+
+  verifyMessage(expectedText) {
+    cy.get(this.selectors.message).should('have.text', expectedText);
     return this;
   }
 
   clickContinue() {
-    // Click the continue button
-    cy.get('[data-qa="continue-button"]').click();
+    cy.get(this.selectors.continueButton).click();
     return this;
+  }
+
+  verifyAccountCreated() {
+    return this.verifyMessage('Account Created!');
+  }
+
+  verifyAccountDelete() {
+    return this.verifyMessage('Account Deleted!');
+  }
+
+
+  clickContinueDelete() {
+    return this.clickContinue();
   }
 }
 
-export default new DashboardPage(); 
+export default new DashboardPage();

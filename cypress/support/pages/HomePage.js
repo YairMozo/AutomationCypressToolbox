@@ -1,17 +1,27 @@
 
 class HomePage {
-
+  // Selectors for the home page
+  selectors = {
+    navMenuItem: (position) => `.shop-menu > .nav > :nth-child(${position}) > a`
+  };
+  // Methods for interacting with the home page
   visit() {
-    // Visit the website URL
     cy.visit('https://automationexercise.com/');
     return this;
   }
 
-  clickRegister() {
-    // Click on the register link in the navigation menu
-    cy.get('.shop-menu > .nav > :nth-child(4) > a').click();
+  clickNavItem(position) {
+    cy.get(this.selectors.navMenuItem(position)).click();
     return this;
+  }
+  // Click on the "Register / Login" button
+  clickRegister() {
+    return this.clickNavItem(4);
+  }
+  // Click on the "Delete Account" button 
+  clickDeleteAccount() {
+    return this.clickNavItem(5);
   }
 }
 
-export default new HomePage(); 
+export default new HomePage();
